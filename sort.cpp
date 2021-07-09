@@ -48,10 +48,12 @@ int main()
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd);
     print(arrayStart, "sorted with the default operator<");
+    delete [] arrayStart;
 
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, std::greater<int>());
     print(arrayStart, "sorted with the standard library compare function object");
+    delete [] arrayStart;
 
     struct
     {
@@ -61,8 +63,10 @@ int main()
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, customLess);
     print(arrayStart, "sorted with a custom function object");
+    delete [] arrayStart;
 
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, [](int a, int b) { return a > b; });
     print(arrayStart, "sorted with a lambda expression");
+    delete [] arrayStart;
 }
