@@ -35,7 +35,7 @@ tuple<int*, int*> randomArray(size_t size)
     }
 
     auto e = a;
-    advance(e, size + 1);
+    advance(e, size);
 
     return {a, e};
 }
