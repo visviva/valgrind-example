@@ -1,0 +1,293 @@
+==4250== Memcheck, a memory error detector
+==4250== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4250== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4250== Command: ./sort
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x10B024: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1851)
+==4250==    by 0x10AD49: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1896)
+==4250==    by 0x10AA8D: void std::__sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1982)
+==4250==    by 0x10A895: void std::sort<int*>(int*, int*) (stl_algo.h:4866)
+==4250==    by 0x108E03: main (sort.cpp:48)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x10B374: bool __gnu_cxx::__ops::_Iter_less_iter::operator()<int*, int*>(int*, int*) const (predefined_ops.h:43)
+==4250==    by 0x10B021: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1851)
+==4250==    by 0x10AD49: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1896)
+==4250==    by 0x10AA8D: void std::__sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1982)
+==4250==    by 0x10A895: void std::sort<int*>(int*, int*) (stl_algo.h:4866)
+==4250==    by 0x108E03: main (sort.cpp:48)
+==4250==  Address 0x5c03ca8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108DB1: main (sort.cpp:47)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x10B5A1: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_less_iter>(int*, __gnu_cxx::__ops::_Val_less_iter) (stl_algo.h:1828)
+==4250==    by 0x10B078: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1859)
+==4250==    by 0x10AD49: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1896)
+==4250==    by 0x10AA8D: void std::__sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1982)
+==4250==    by 0x10A895: void std::sort<int*>(int*, int*) (stl_algo.h:4866)
+==4250==    by 0x108E03: main (sort.cpp:48)
+==4250==  Address 0x5c03ca8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108DB1: main (sort.cpp:47)
+==4250== 
+==4250== Invalid write of size 4
+==4250==    at 0x10B5E0: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_less_iter>(int*, __gnu_cxx::__ops::_Val_less_iter) (stl_algo.h:1833)
+==4250==    by 0x10B078: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1859)
+==4250==    by 0x10AD49: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1896)
+==4250==    by 0x10AA8D: void std::__sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1982)
+==4250==    by 0x10A895: void std::sort<int*>(int*, int*) (stl_algo.h:4866)
+==4250==    by 0x108E03: main (sort.cpp:48)
+==4250==  Address 0x5c03ca8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108DB1: main (sort.cpp:47)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x10B5CC: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_less_iter>(int*, __gnu_cxx::__ops::_Val_less_iter) (stl_algo.h:1831)
+==4250==    by 0x10B078: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1859)
+==4250==    by 0x10AD49: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1896)
+==4250==    by 0x10AA8D: void std::__sort<int*, __gnu_cxx::__ops::_Iter_less_iter>(int*, int*, __gnu_cxx::__ops::_Iter_less_iter) (stl_algo.h:1982)
+==4250==    by 0x10A895: void std::sort<int*>(int*, int*) (stl_algo.h:4866)
+==4250==    by 0x108E03: main (sort.cpp:48)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x4F5F15B: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:892)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108E39: main (sort.cpp:49)
+==4250== 
+==4250== Use of uninitialised value of size 8
+==4250==    at 0x4F5EEA3: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:821)
+==4250==    by 0x4F5F185: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:894)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108E39: main (sort.cpp:49)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x4F5EEB5: int std::__int_to_char<char, unsigned long>(char*, unsigned long, char const*, std::_Ios_Fmtflags, bool) (locale_facets.tcc:824)
+==4250==    by 0x4F5F185: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:894)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108E39: main (sort.cpp:49)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x4F5F1BA: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:914)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108E39: main (sort.cpp:49)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x10B1CB: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1851)
+==4250==    by 0x10AE58: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1896)
+==4250==    by 0x10AB12: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1982)
+==4250==    by 0x10A8F3: void std::sort<int*, std::greater<int> >(int*, int*, std::greater<int>) (stl_algo.h:4899)
+==4250==    by 0x108E99: main (sort.cpp:52)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x10B913: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> > >(int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> >) (stl_algo.h:1831)
+==4250==    by 0x10B21F: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1859)
+==4250==    by 0x10AE58: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1896)
+==4250==    by 0x10AB12: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1982)
+==4250==    by 0x10A8F3: void std::sort<int*, std::greater<int> >(int*, int*, std::greater<int>) (stl_algo.h:4899)
+==4250==    by 0x108E99: main (sort.cpp:52)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x10BC4E: std::greater<int>::operator()(int const&, int const&) const (stl_function.h:376)
+==4250==    by 0x10B6F0: bool __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >::operator()<int*, int*>(int*, int*) (predefined_ops.h:156)
+==4250==    by 0x10B1C8: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1851)
+==4250==    by 0x10AE58: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1896)
+==4250==    by 0x10AB12: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1982)
+==4250==    by 0x10A8F3: void std::sort<int*, std::greater<int> >(int*, int*, std::greater<int>) (stl_algo.h:4899)
+==4250==    by 0x108E99: main (sort.cpp:52)
+==4250==  Address 0x5c04d58 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108E4D: main (sort.cpp:51)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x10B8E8: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> > >(int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> >) (stl_algo.h:1828)
+==4250==    by 0x10B21F: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1859)
+==4250==    by 0x10AE58: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1896)
+==4250==    by 0x10AB12: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1982)
+==4250==    by 0x10A8F3: void std::sort<int*, std::greater<int> >(int*, int*, std::greater<int>) (stl_algo.h:4899)
+==4250==    by 0x108E99: main (sort.cpp:52)
+==4250==  Address 0x5c04d58 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108E4D: main (sort.cpp:51)
+==4250== 
+==4250== Invalid write of size 4
+==4250==    at 0x10B94A: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> > >(int*, __gnu_cxx::__ops::_Val_comp_iter<std::greater<int> >) (stl_algo.h:1837)
+==4250==    by 0x10B21F: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1859)
+==4250==    by 0x10AE58: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1896)
+==4250==    by 0x10AB12: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> > >(int*, int*, __gnu_cxx::__ops::_Iter_comp_iter<std::greater<int> >) (stl_algo.h:1982)
+==4250==    by 0x10A8F3: void std::sort<int*, std::greater<int> >(int*, int*, std::greater<int>) (stl_algo.h:4899)
+==4250==    by 0x108E99: main (sort.cpp:52)
+==4250==  Address 0x5c04d58 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108E4D: main (sort.cpp:51)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x109463: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1851)
+==4250==    by 0x109246: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1896)
+==4250==    by 0x1090B3: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1982)
+==4250==    by 0x109003: void std::sort<int*, main::{unnamed type#1}>(int*, main::{unnamed type#1}, main::{unnamed type#1}) (stl_algo.h:4899)
+==4250==    by 0x108F20: main (sort.cpp:61)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x109786: bool __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>::operator()<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>::operator()>(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>::operator()) (predefined_ops.h:156)
+==4250==    by 0x109460: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1851)
+==4250==    by 0x109246: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1896)
+==4250==    by 0x1090B3: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1982)
+==4250==    by 0x109003: void std::sort<int*, main::{unnamed type#1}>(int*, main::{unnamed type#1}, main::{unnamed type#1}) (stl_algo.h:4899)
+==4250==    by 0x108F20: main (sort.cpp:61)
+==4250==  Address 0x5c04dc8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108ED7: main (sort.cpp:60)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x109989: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1828)
+==4250==    by 0x1094B7: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1859)
+==4250==    by 0x109246: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1896)
+==4250==    by 0x1090B3: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1982)
+==4250==    by 0x109003: void std::sort<int*, main::{unnamed type#1}>(int*, main::{unnamed type#1}, main::{unnamed type#1}) (stl_algo.h:4899)
+==4250==    by 0x108F20: main (sort.cpp:61)
+==4250==  Address 0x5c04dc8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108ED7: main (sort.cpp:60)
+==4250== 
+==4250== Invalid write of size 4
+==4250==    at 0x1099C8: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1833)
+==4250==    by 0x1094B7: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1859)
+==4250==    by 0x109246: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1896)
+==4250==    by 0x1090B3: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1982)
+==4250==    by 0x109003: void std::sort<int*, main::{unnamed type#1}>(int*, main::{unnamed type#1}, main::{unnamed type#1}) (stl_algo.h:4899)
+==4250==    by 0x108F20: main (sort.cpp:61)
+==4250==  Address 0x5c04dc8 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108ED7: main (sort.cpp:60)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x1099B4: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1831)
+==4250==    by 0x1094B7: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1859)
+==4250==    by 0x109246: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1896)
+==4250==    by 0x1090B3: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{unnamed type#1}>) (stl_algo.h:1982)
+==4250==    by 0x109003: void std::sort<int*, main::{unnamed type#1}>(int*, main::{unnamed type#1}, main::{unnamed type#1}) (stl_algo.h:4899)
+==4250==    by 0x108F20: main (sort.cpp:61)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x4F5F15B: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:892)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108F4D: main (sort.cpp:62)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x4F5F1BA: std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const (locale_facets.tcc:914)
+==4250==    by 0x4F6D0F7: put (locale_facets.h:2395)
+==4250==    by 0x4F6D0F7: std::ostream& std::ostream::_M_insert<long>(long) (ostream.tcc:73)
+==4250==    by 0x108C27: print(int*, std::basic_string_view<char, std::char_traits<char> >) (sort.cpp:15)
+==4250==    by 0x108F4D: main (sort.cpp:62)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x10960A: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1851)
+==4250==    by 0x109354: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1896)
+==4250==    by 0x109138: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1982)
+==4250==    by 0x10902E: void std::sort<int*, main::{lambda(int, int)#1}>(int*, main::{lambda(int, int)#1}, main::{lambda(int, int)#1}) (stl_algo.h:4899)
+==4250==    by 0x108FA7: main (sort.cpp:65)
+==4250== 
+==4250== Conditional jump or move depends on uninitialised value(s)
+==4250==    at 0x109CFE: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1831)
+==4250==    by 0x10965E: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1859)
+==4250==    by 0x109354: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1896)
+==4250==    by 0x109138: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1982)
+==4250==    by 0x10902E: void std::sort<int*, main::{lambda(int, int)#1}>(int*, main::{lambda(int, int)#1}, main::{lambda(int, int)#1}) (stl_algo.h:4899)
+==4250==    by 0x108FA7: main (sort.cpp:65)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x109AD0: bool __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>::operator()<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>::operator()>(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>::operator()) (predefined_ops.h:156)
+==4250==    by 0x109607: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1851)
+==4250==    by 0x109354: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1896)
+==4250==    by 0x109138: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1982)
+==4250==    by 0x10902E: void std::sort<int*, main::{lambda(int, int)#1}>(int*, main::{lambda(int, int)#1}, main::{lambda(int, int)#1}) (stl_algo.h:4899)
+==4250==    by 0x108FA7: main (sort.cpp:65)
+==4250==  Address 0x5c04e38 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108F5E: main (sort.cpp:64)
+==4250== 
+==4250== Invalid read of size 4
+==4250==    at 0x109CD3: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1828)
+==4250==    by 0x10965E: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1859)
+==4250==    by 0x109354: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1896)
+==4250==    by 0x109138: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1982)
+==4250==    by 0x10902E: void std::sort<int*, main::{lambda(int, int)#1}>(int*, main::{lambda(int, int)#1}, main::{lambda(int, int)#1}) (stl_algo.h:4899)
+==4250==    by 0x108FA7: main (sort.cpp:65)
+==4250==  Address 0x5c04e38 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108F5E: main (sort.cpp:64)
+==4250== 
+==4250== Invalid write of size 4
+==4250==    at 0x109D35: void std::__unguarded_linear_insert<int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Val_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1837)
+==4250==    by 0x10965E: void std::__insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1859)
+==4250==    by 0x109354: void std::__final_insertion_sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1896)
+==4250==    by 0x109138: void std::__sort<int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}> >(int*, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>, __gnu_cxx::__ops::_Iter_comp_iter<main::{lambda(int, int)#1}>) (stl_algo.h:1982)
+==4250==    by 0x10902E: void std::sort<int*, main::{lambda(int, int)#1}>(int*, main::{lambda(int, int)#1}, main::{lambda(int, int)#1}) (stl_algo.h:4899)
+==4250==    by 0x108FA7: main (sort.cpp:65)
+==4250==  Address 0x5c04e38 is 0 bytes after a block of size 40 alloc'd
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108F5E: main (sort.cpp:64)
+==4250== 
+0 0 7 8 11 16 25 34 : sorted with the default operator<
+89 74 61 54 43 36 34 30 : sorted with the standard library compare function object
+0 0 9 22 28 39 44 61 : sorted with a custom function object
+94 87 64 62 53 47 46 24 : sorted with a lambda expression
+==4250== 
+==4250== HEAP SUMMARY:
+==4250==     in use at exit: 160 bytes in 4 blocks
+==4250==   total heap usage: 6 allocs, 2 frees, 76,960 bytes allocated
+==4250== 
+==4250== 40 bytes in 1 blocks are definitely lost in loss record 1 of 4
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108DB1: main (sort.cpp:47)
+==4250== 
+==4250== 40 bytes in 1 blocks are definitely lost in loss record 2 of 4
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108E4D: main (sort.cpp:51)
+==4250== 
+==4250== 40 bytes in 1 blocks are definitely lost in loss record 3 of 4
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108ED7: main (sort.cpp:60)
+==4250== 
+==4250== 40 bytes in 1 blocks are definitely lost in loss record 4 of 4
+==4250==    at 0x4C3289F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4250==    by 0x108CCC: randomArray(unsigned long) (sort.cpp:29)
+==4250==    by 0x108F5E: main (sort.cpp:64)
+==4250== 
+==4250== LEAK SUMMARY:
+==4250==    definitely lost: 160 bytes in 4 blocks
+==4250==    indirectly lost: 0 bytes in 0 blocks
+==4250==      possibly lost: 0 bytes in 0 blocks
+==4250==    still reachable: 0 bytes in 0 blocks
+==4250==         suppressed: 0 bytes in 0 blocks
+==4250== 
+==4250== For counts of detected and suppressed errors, rerun with: -v
+==4250== Use --track-origins=yes to see where uninitialised values come from
+==4250== ERROR SUMMARY: 36 errors from 30 contexts (suppressed: 0 from 0)
