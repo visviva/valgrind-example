@@ -29,7 +29,7 @@ tuple<int*, int*> randomArray(size_t size)
     auto a = new int[size];
     memset(a, 0xab, size * sizeof(int));
 
-    for (size_t i = 0; i <= sizeof(a); ++i)
+    for (size_t i = 0; i <= size; ++i)
     {
         a[i] = rand() % 100;
     }
