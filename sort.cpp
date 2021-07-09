@@ -27,15 +27,14 @@ tuple<int*, int*> randomArray(size_t size)
     }
 
     auto a = new int[size];
-    memset(a, 0xab, size * sizeof(int));
 
-    for (size_t i = 0; i < size; ++i)
+    for (size_t i = 0; i <= sizeof(a); ++i)
     {
         a[i] = rand() % 100;
     }
 
     auto e = a;
-    advance(e, size);
+    advance(e, size + 1);
 
     return {a, e};
 }
@@ -48,12 +47,10 @@ int main()
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd);
     print(arrayStart, "sorted with the default operator<");
-    delete [] arrayStart;
 
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, std::greater<int>());
     print(arrayStart, "sorted with the standard library compare function object");
-    delete [] arrayStart;
 
     struct
     {
@@ -63,10 +60,8 @@ int main()
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, customLess);
     print(arrayStart, "sorted with a custom function object");
-    delete [] arrayStart;
 
     tie(arrayStart, arrayEnd) = randomArray(10);
     sort(arrayStart, arrayEnd, [](int a, int b) { return a > b; });
     print(arrayStart, "sorted with a lambda expression");
-    delete [] arrayStart;
 }
